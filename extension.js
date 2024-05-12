@@ -1,6 +1,6 @@
 ({
     name: "MotorDriver", // Category Name
-    description: "MOTOR DRIVER TB6612FNG for every board use only 4 pin(PWM)",
+    description: "MOTOR DRIVER TB6612FNG for every board and use only 4 pin(PWM)",
     author: "Nawa Phansaen",
     category: "Device Control",
     version: "1.0.0",
