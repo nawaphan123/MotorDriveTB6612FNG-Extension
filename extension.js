@@ -35,6 +35,8 @@
                     </value>
                 </block>
             `
+        },{
+            xml: '<label text="For Moving Motor"></label>',
         },
         {
             xml: `
