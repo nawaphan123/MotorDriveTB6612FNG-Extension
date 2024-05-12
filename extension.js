@@ -1,64 +1,85 @@
 ({
-    name: "GPS", // Category Name
-    description: "Get latitude longitude and speed from GPS module (gy-neo6mv2)",
+    name: "MotorDriver", // Category Name
+    description: "MOTOR DRIVER TB6612FNG for every board use only 4 pin(PWM)",
     author: "Nawa Phansaen",
-    category: "Sensors",
-    version: "1.2.0",
-    icon: "/static/icon2.png", // Category icon
-    color: "#5DADE2", // Category color (recommend some blocks color)
+    category: "Device Control",
+    version: "1.0.0",
+    icon: "/static/icon.png", // Category icon
+    color: "#d63838", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category
-    {
-        xml: `
-            <block type="gps_setup">
-                <value name="pin">
-                    <shadow type="math_number">
-                        <field name="NUM">8</field>
-                    </shadow>
-                </value>
-            </block>
-            `
+        {
+            xml: '<label text="For Setup Motor Driver"></label>',
         },
-        "gps_is_ready",
-        "gps_position",
-        "gps_speed",
         {
             xml: `
-                <block type="gps_distance">
-                    <value name="lat1">
+                <block type="motor_setup">
+                    <value name="M1A">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">2</field>
                         </shadow>
                     </value>
-                    <value name="lng1">
+                    <value name="M1B">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">4</field>
                         </shadow>
                     </value>
-                    <value name="lat2">
+                    <value name="M2A">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">16</field>
                         </shadow>
                     </value>
-                    <value name="lng2">
+                    <value name="M2B">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">17</field>
                         </shadow>
                     </value>
                 </block>
             `
         },
         {
-            xml: '<label text="UTC datetime"></label>',
+            xml: `
+                <block type="motor_forward">
+                    <value name="fd_speed">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
         },
-        "gps_get_hour",
-        "gps_get_min",
-        "gps_get_sec",
-        "gps_get_day",
-        "gps_get_month",
-        "gps_get_year"
-    ],
-    supportArduinoPlatform: true,
-    depends: [ // Arduino library
-        "TinyGPS@13.0.0"
+        {
+            xml: `
+                <block type="motor_backward">
+                    <value name="bk_speed">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="motor_spinLeft">
+                    <value name="sl_speed">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="motor_spinRight">
+                    <value name="sr_speed">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        "motor_stop",
     ]
 });
