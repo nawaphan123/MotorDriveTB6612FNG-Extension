@@ -44,4 +44,7 @@ class Motor:
     def sr(self, _speed):
         self.motor(1, _speed)
         self.motor(2, -_speed)
+    def Motor(self,Lspeed,Rspeed):
+        self.motor(1,Lspeed)
+        self.motor(2,Rspeed)
 
