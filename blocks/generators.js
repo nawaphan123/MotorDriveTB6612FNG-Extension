@@ -33,6 +33,13 @@ Blockly.Python['motor_spinRight'] = function(block) {
   var code = `m.sr(${speed})\n`;
   return code;
 };
+Blockly.Python['motor_drive'] = function(block) {
+  Blockly.Python.definitions_['import_motor'] = 'from motor import Motor';
+  var speedL = Blockly.Python.valueToCode(block, 'mL_speed', Blockly.Python.ORDER_ATOMIC);
+  var speedR = Blockly.Python.valueToCode(block, 'mR_speed', Blockly.Python.ORDER_ATOMIC);
+  var code = `m.Motor(${speedL},${speedR})\n`;
+  return code;
+};
 Blockly.Python['motor_stop'] = function(block) {
   Blockly.Python.definitions_['import_motor'] = 'from motor import Motor';
   var code = `m.stop()\n`;
