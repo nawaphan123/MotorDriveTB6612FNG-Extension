@@ -90,6 +90,26 @@ Blockly.defineBlocksWithJsonArray([
     "colour": "#d63838",
     "tooltip": "",
     "helpUrl": ""
+  },{
+    "type": "motor_drive",
+    "message0": "Motor Left %1 Right %2 |",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "mL_speed",
+        "check": "Number"
+      },
+      {
+        "type": "input_value",
+        "name": "mR_speed",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#d63838",
+    "tooltip": "",
+    "helpUrl": ""
   }
   ,{
     "type": "motor_stop",
