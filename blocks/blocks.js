@@ -92,7 +92,7 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   },{
     "type": "motor_drive",
-    "message0": "Motor Left %1 Right %2 |",
+    "message0": "Motor Left %1 % Right %2 %",
     "args0": [
       {
         "type": "input_value",
